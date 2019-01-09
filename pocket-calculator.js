@@ -1,40 +1,68 @@
+let display = ""
 let x
 let y
 let answer
+let operation
+function clear() {
+  x = ""
+  y = ""
+  display = ""
+}
 function zero() {
-  x = "0" + x
+  display = "0" + display
 }
 function one() {
-  x = "1" + x
+  display = "1" + display
 }
 function two() {
-  x = "2" + x
+  display = "2" + display
 }
 function three() {
-  x = "3" + x
+  display = "3" + display
 }
 function four() {
-  x = "4" + x
+  display = "4" + display
 }
 function five() {
-  x = "5" + x
+  display = "5" + display
 }
 function six() {
-  x = "6" + x
+  display = "6" + display
 }
 function seven() {
-  x = "7" + x
+  display = "7" + display
 }
 function eight() {
-  x = "8" + x
+  display = "8" + display
 }
 function nine() {
-  x = "9" + x
+  display = "9" + display
 }
 function add() {
-  answer = x + y
+  x = display
+  operation = "+"
+  display = ""
+}
+function equals() {
+  y = display
+  x = Number(x)
+  y = Number(y)
+  if (operation === "+") {
+    answer = x + y
+  }
+  if (operation === "-") {
+    answer = x - y
+  }
+  if (operation === "*") {
+    answer = x * y
+  }
+  if (operation === "/") {
+    answer = x / y
+  }
 }
 function consoleDisplay() {
-  console.log(answer)
+  console.log(operation)
+  console.log(display)
   console.log(x)
+  console.log(answer)
 }
