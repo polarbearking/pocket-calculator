@@ -3,13 +3,16 @@ let x
 let y
 let answer
 let operation
+let memory = ""
 function clear() {
-  x = ""
-  y = ""
-  display = ""
+  x = "";
+  y = "";
+  display = "";
+  console.log(display)
 }
 function zero() {
   display = "0" + display
+  document.getElementById("display").innerHTML= "0"
 }
 function one() {
   display = "1" + display
@@ -43,6 +46,24 @@ function add() {
   operation = "+"
   display = ""
 }
+function minus() {
+  x = display
+  operation = "-"
+  display = ""
+}
+function times() {
+  x = display
+  operation = "*"
+  display = ""
+}
+function divide() {
+  x = display
+  operation = "/"
+  display = ""
+}
+function precentage() {
+
+}
 function equals() {
   y = display
   x = Number(x)
@@ -59,6 +80,7 @@ function equals() {
   if (operation === "/") {
     answer = x / y
   }
+  memory = answer
 }
 function consoleDisplay() {
   console.log(operation)
