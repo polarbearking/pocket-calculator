@@ -3,16 +3,10 @@ let x
 let y
 let answer
 let operation
-let memory = ""
-function clear() {
-  x = "";
-  y = "";
-  display = "";
-  console.log(display)
-}
+let memory = []
+let work = []
 function zero() {
   display = "0" + display
-  document.getElementById("display").innerHTML= "0"
 }
 function one() {
   display = "1" + display
@@ -29,7 +23,7 @@ function four() {
 function five() {
   display = "5" + display
 }
-function six() {
+function sidisplay() {
   display = "6" + display
 }
 function seven() {
@@ -42,49 +36,39 @@ function nine() {
   display = "9" + display
 }
 function add() {
-  x = display
-  operation = "+"
+  x += display
+  x += "+"
   display = ""
 }
 function minus() {
-  x = display
-  operation = "-"
+  x += display
+  x += "-"
   display = ""
 }
 function times() {
-  x = display
-  operation = "*"
+  x += display
+  x += "*"
   display = ""
 }
 function divide() {
-  x = display
-  operation = "/"
+  x += display
+  x += "/"
   display = ""
 }
 function precentage() {
-
 }
 function equals() {
-  y = display
-  x = Number(x)
-  y = Number(y)
-  if (operation === "+") {
-    answer = x + y
-  }
-  if (operation === "-") {
-    answer = x - y
-  }
-  if (operation === "*") {
-    answer = x * y
-  }
-  if (operation === "/") {
-    answer = x / y
-  }
-  memory = answer
+}
+function clr() {
 }
 function consoleDisplay() {
   console.log(operation)
   console.log(display)
   console.log(x)
   console.log(answer)
+//  for (let i = 0; i < numbers.length; i++) {
+  // let square = numbers[i] * numbers[i];
+   //console.log(square);
+//}
+  console.log(work.length)
 }
