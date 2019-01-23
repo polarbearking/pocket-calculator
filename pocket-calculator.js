@@ -1,74 +1,120 @@
 let display = ""
-let x
-let y
+let mem = []
+let memo
+let equation
 let answer
-let operation
-let memory = []
-let work = []
 function zero() {
-  display = "0" + display
+  display += "0"
+  div = document.getElementById("display");
+  div.innerHTML = display;
 }
 function one() {
-  display = "1" + display
+  display += "1"
+  div = document.getElementById("display");
+  div.innerHTML = display;
 }
 function two() {
-  display = "2" + display
+  display += "2"
+  div = document.getElementById("display");
+  div.innerHTML = display;
 }
 function three() {
-  display = "3" + display
+  display += "3"
+  div = document.getElementById("display");
+  div.innerHTML = display;
 }
 function four() {
-  display = "4" + display
+  display += "4"
+  div = document.getElementById("display");
+  div.innerHTML = display;
 }
 function five() {
-  display = "5" + display
+  display += "5"
+  div = document.getElementById("display");
+  div.innerHTML = display;
 }
-function sidisplay() {
-  display = "6" + display
+function six() {
+  display += "6"
+  div = document.getElementById("display");
+  div.innerHTML = display;
 }
 function seven() {
-  display = "7" + display
+  display += "7"
+  div = document.getElementById("display");
+  div.innerHTML = display;
 }
 function eight() {
-  display = "8" + display
+  display += "8"
+  div = document.getElementById("display");
+  div.innerHTML = display;
 }
 function nine() {
-  display = "9" + display
+  display += "9"
+  div = document.getElementById("display");
+  div.innerHTML = display;
 }
 function add() {
-  x += display
-  x += "+"
+  display += "+";
+  mem.push(display);
   display = ""
 }
 function minus() {
-  x += display
-  x += "-"
+  display += "-";
+  mem.push(display);
   display = ""
 }
 function times() {
-  x += display
-  x += "*"
+  display += "*";
+  mem.push(display);
   display = ""
 }
 function divide() {
-  x += display
-  x += "/"
+  display += "/";
+  mem.push(display);
   display = ""
 }
-function precentage() {
+function percentage() {
+  display = display * .01
+  div = document.getElementById("display");
+  div.innerHTML = display;
+}
+function negation() {
+  display = display * -1
+  div = document.getElementById("display");
+  div.innerHTML = display;
 }
 function equals() {
+  mem.push(display);
+  equation = mem.join('')
+  display = ""
+  answer = eval(equation)
+  if (answer==Infinity||answer==undefined){
+     document.getElementById('display').innerHTML= "Error";
+   }
+   else if(answer>=1000000000){
+     let exponent=answer.toString().length-1;
+     document.getElementById('display').innerHTML=answer/(10**(exponent))+'e'+exponent;
+
+   }
+   else if(answer<=-1000000000){
+   let exponent=answer.toString().length-2;
+   document.getElementById('display').innerHTML=answer/(10**(exponent))+'e'+exponent;
+ }
+   else{
+     document.getElementById('display').innerHTML=answer.toLocaleString();
+   }
 }
 function clr() {
+  let display = ""
+  mem.length = 0
+  let memo = ""
+  let equation = " "
+  let answer = ""
+  div = document.getElementById("display");
+  div.innerHTML = display;
 }
-function consoleDisplay() {
-  console.log(operation)
-  console.log(display)
-  console.log(x)
-  console.log(answer)
-//  for (let i = 0; i < numbers.length; i++) {
-  // let square = numbers[i] * numbers[i];
-   //console.log(square);
-//}
-  console.log(work.length)
+function decimal() {
+    display += ".";
+    div = document.getElementById("display");
+    div.innerHTML = display;
 }
